@@ -2,22 +2,18 @@ package org.example.crud_app_boot.service;
 
 import org.example.crud_app_boot.dao.UserDao;
 import org.example.crud_app_boot.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
-@Primary
 @Transactional
 public class UserServiceImpl implements UserService {
 
     private final UserDao userDao;
 
-    public UserServiceImpl(@Autowired UserDao userDao) {
+    public UserServiceImpl(UserDao userDao) {
         this.userDao = userDao;
     }
 

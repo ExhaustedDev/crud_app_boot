@@ -1,6 +1,7 @@
 package org.example.crud_app_boot.controller;
 
 import org.example.crud_app_boot.model.User;
+import org.example.crud_app_boot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,16 +9,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.example.crud_app_boot.service.UserService;
-
-import java.util.Optional;
 
 @Controller
 public class UserController {
 
     private final UserService userService;
 
-    public UserController(@Autowired UserService userService) {
+    public UserController(UserService userService) {
         this.userService = userService;
     }
 
